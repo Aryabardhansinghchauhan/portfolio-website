@@ -1,0 +1,213 @@
+/* --- Global Variables & Reset --- */
+:root {
+  --dark-green: #3c8453;
+  --beige: #bcaa96;
+  --dark-grey: #222;
+  --light-grey: #d3d4d6;
+  --off-white: #f6f6f6;
+  --white: #ffffff;
+  --shadow: 0 4px 12px rgba(0,0,0,0.06);
+  --radius: 10px;
+  --font-body: 'Inter', sans-serif;
+  --font-head: 'Caveat', cursive;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  background: var(--off-white);
+  color: var(--dark-grey);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+  font-family: var(--font-head);
+  font-weight: 400;
+  color: var(--dark-green);
+}
+h1 {
+  font-size: 6rem;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 3.2rem;
+  margin-bottom: 15px;
+}
+h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+p {
+  margin-bottom: 15px;
+}
+
+/* --- Layout Container --- */
+.content-wrapper {
+  max-width: 960px;
+  margin: auto;
+  padding: 40px 20px;
+}
+.section {
+  margin-block: 60px;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  background-color: var(--dark-green);
+  color: var(--off-white);
+  padding: 10px 20px;
+  font-size: 1.4rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: var(--beige);
+  color: var(--dark-grey);
+}
+
+/* --- Links --- */
+a {
+  color: var(--dark-green);
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--beige);
+}
+
+/* --- Home Section --- */
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url(placeholder-images/bg-home-office-studio.jpg) no-repeat center center / cover;
+  text-align: center;
+}
+.home .content-bg {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: var(--radius);
+  max-width: 700px;
+}
+
+/* --- Resume Header --- */
+.resume header::before {
+  content: "";
+  display: block;
+  height: 350px;
+  background: url(placeholder-images/bg-home-office-studio.jpg) center/cover no-repeat;
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+.resume-section {
+  margin-bottom: 50px;
+}
+.resume-section h2 {
+  border-bottom: 2px dashed var(--light-grey);
+  padding-bottom: 10px;
+}
+
+/* --- Cards for Projects / Work / Education --- */
+.card {
+  background: var(--white);
+  padding: 25px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+.project-item img {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-top: 15px;
+  border: 1px solid var(--light-grey);
+}
+.project-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Work / Education --- */
+.work-item,
+.education-item {
+  background: var(--white);
+  padding: 20px;
+  border-left: 6px solid var(--dark-green);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+.work-summary p:first-child {
+  margin-top: 0;
+}
+
+/* --- Download Button --- */
+.download-link {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 1.4rem;
+  background: var(--dark-green);
+  color: var(--white);
+  padding: 8px 14px;
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--dark-grey);
+  color: var(--light-grey);
+  padding: 40px 20px;
+}
+footer a {
+  color: var(--beige);
+}
+footer a:hover {
+  color: var(--dark-green);
+}
+footer .socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  list-style: none;
+}
+footer .socials img {
+  width: 28px;
+  transition: opacity 0.3s ease;
+}
+footer .socials img:hover {
+  opacity: 0.5;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+  h2 {
+    font-size: 2.6rem;
+  }
+  .btn {
+    padding: 8px 16px;
+    font-size: 1.2rem;
+  }
+  .content-wrapper {
+    padding: 20px;
+  }
+}
